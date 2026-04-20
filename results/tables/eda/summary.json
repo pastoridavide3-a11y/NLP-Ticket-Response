@@ -1,0 +1,24 @@
+{
+  "rows": 28254,
+  "priority_counts": {
+    "low": 5774,
+    "medium": 11565,
+    "high": 10915
+  },
+  "department_counts": {
+    "Technical Support": 8147,
+    "Product Support": 5301,
+    "Customer Service": 4269,
+    "IT Support": 3333,
+    "Billing and Payments": 2896,
+    "Returns and Exchanges": 1402,
+    "Service Outages and Maintenance": 1106,
+    "Sales and Pre-Sales": 843,
+    "Human Resources": 553,
+    "General Inquiry": 404
+  },
+  "mean_ticket_tokens": 60.473773624973454,
+  "mean_answer_tokens": 58.38652934097827,
+  "median_ticket_tokens": 59.0,
+  "median_answer_tokens": 59.0
+}
