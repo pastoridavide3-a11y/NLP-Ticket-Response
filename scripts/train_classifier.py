@@ -42,9 +42,9 @@ def _confusion_fig(y_true, y_pred, labels, title, path):
 
 def main() -> None:
     set_seed(config.SEED)
-    train = uio.load_df(config.DATA_PROCESSED / "train.parquet")
-    val = uio.load_df(config.DATA_PROCESSED / "val.parquet")
-    test = uio.load_df(config.DATA_PROCESSED / "test.parquet")
+    train = uio.load_df(config.DATA_PROCESSED / "train.csv")
+    val = uio.load_df(config.DATA_PROCESSED / "val.csv")
+    test = uio.load_df(config.DATA_PROCESSED / "test.csv")
 
     clf_out_dir = config.TABLES / "classification"
     clf_fig_dir = config.FIGURES / "classification"
