@@ -24,12 +24,17 @@ DEPARTMENTS = [
     "Customer Service",
     "IT Support",
     "Billing and Payments",
+    "Other",
+]
+
+# departments merged into "Other" (count < 1500)
+_SMALL_DEPARTMENTS = {
     "Returns and Exchanges",
     "Service Outages and Maintenance",
     "Sales and Pre-Sales",
     "Human Resources",
     "General Inquiry",
-]
+}
 # English subset only has {low, medium, high}. Kept ordered for display.
 PRIORITIES = ["low", "medium", "high"]
 

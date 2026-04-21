@@ -1,0 +1,12 @@
+                      precision    recall  f1-score   support
+
+Billing and Payments       0.88      0.87      0.88       435
+    Customer Service       0.67      0.67      0.67       640
+          IT Support       0.74      0.69      0.71       500
+               Other       0.77      0.69      0.73       646
+     Product Support       0.69      0.67      0.68       796
+   Technical Support       0.70      0.78      0.74      1222
+
+            accuracy                           0.73      4239
+           macro avg       0.74      0.73      0.73      4239
+        weighted avg       0.73      0.73      0.72      4239

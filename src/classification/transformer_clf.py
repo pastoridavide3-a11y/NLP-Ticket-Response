@@ -59,16 +59,14 @@ def train_bert(
     return model, tokenizer, id2label
 
 
-def predict_bert(model, tokenizer, id2label: dict, texts: list[str], max_len: int = 128, batch_size: int = 32) -> list[str]:
+def predict_bert(model, tokenizer, id2label: dict, texts: list[str], max_len: int = 128, batch_size: int = 64) -> list[str]:
     device = next(model.parameters()).device
-    enc = tokenize(texts, tokenizer, max_len)
-    dataset = TensorDataset(enc["input_ids"], enc["attention_mask"])
-    loader = DataLoader(dataset, batch_size=batch_size, shuffle=False)
-
     model.eval()
     preds = []
     with torch.no_grad():
-        for input_ids, attention_mask in loader:
-            logits = model(input_ids=input_ids.to(device), attention_mask=attention_mask.to(device)).logits
+        for i in range(0, len(texts), batch_size):
+            batch = texts[i:i + batch_size]
+            enc = tokenizer(batch, padding="max_length", truncation=True, max_length=max_len, return_tensors="pt")
+            logits = model(input_ids=enc["input_ids"].to(device), attention_mask=enc["attention_mask"].to(device)).logits
             preds.extend(logits.argmax(dim=-1).cpu().tolist())
     return [id2label[i] for i in preds]
