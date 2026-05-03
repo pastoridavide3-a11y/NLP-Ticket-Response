@@ -23,12 +23,12 @@ def main() -> None:
 
     summary = {"total": int(len(df))}
     for name, part in splits.items():
-        path = config.DATA_PROCESSED / f"{name}.parquet"
+        path = config.DATA_PROCESSED / f"{name}.csv"
         uio.save_df(part, path)
         summary[name] = int(len(part))
         print(f"[prepare_data] wrote {path} rows={len(part)}")
 
-    uio.save_df(df, config.DATA_PROCESSED / "full.parquet")
+    uio.save_df(df, config.DATA_PROCESSED / "full.csv")
     uio.save_json(summary, config.DATA_PROCESSED / "split_summary.json")
     print(f"[prepare_data] summary={summary}")
 

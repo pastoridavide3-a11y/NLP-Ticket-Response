@@ -28,7 +28,7 @@ def _count_tokens(series: pd.Series) -> pd.Series:
 
 
 def main() -> None:
-    df = uio.load_df(config.DATA_PROCESSED / "full.parquet")
+    df = uio.load_df(config.DATA_PROCESSED / "full.csv")
     print(f"[eda] rows={len(df)}")
 
     # --- 1. class distributions ------------------------------------------------

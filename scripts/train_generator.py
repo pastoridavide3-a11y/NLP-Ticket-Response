@@ -42,9 +42,9 @@ def _save(df: pd.DataFrame, preds, model_name: str, split: str) -> pd.DataFrame:
 
 def main() -> None:
     set_seed(config.SEED)
-    train = uio.load_df(config.DATA_PROCESSED / "train.parquet")
-    val = uio.load_df(config.DATA_PROCESSED / "val.parquet")
-    test = uio.load_df(config.DATA_PROCESSED / "test.parquet")
+    train = uio.load_df(config.DATA_PROCESSED / "train.csv")
+    val = uio.load_df(config.DATA_PROCESSED / "val.csv")
+    test = uio.load_df(config.DATA_PROCESSED / "test.csv")
 
     # --- constant --------------------------------------------------------------
     const = ConstantResponder().fit(train["ticket"], train["answer"])
